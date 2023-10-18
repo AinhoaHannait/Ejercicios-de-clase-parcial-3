@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+void raiz (float numero);
+
+int main ()
+{
+	float dato = 0.0;
+	raiz (9);
+	raiz(-144);
+	printf("Dato para calcular raiz: ");
+	scanf("%f", &dato);
+	raiz (dato);
+	return 0;
+}
+
+void raiz (float numero)
+{
+	float resultado= 0.0;
+	//obtener el valor absoluto
+	numero = abs(numero);
+	//obtener la raiz cuadrada
+	resultado = sqrt (numero); //sqrt raiz
+	printf("Raiz %f\n", resultado);
+	
+	
+}
