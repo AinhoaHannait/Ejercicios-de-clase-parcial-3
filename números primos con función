@@ -1,0 +1,33 @@
+#include <stdio.h>
+//numero primos
+
+int ChecarNumerosPrimos(int n);
+
+int main ()
+{
+	int n1, n2, i, bandera;
+	printf("Ingresa dos numeros:");
+	scanf("%d %d", &n1, &n2);
+	printf ("Primos entre %d y %d son:\n", n1, n2);
+	for (i=n1+1; i<n2; ++i)
+	{
+		// si i es primo la funcion regresara a uno
+		bandera = ChecarNumerosPrimos (i);
+		if (bandera == 1)
+			printf("%d \n", i);
+	}
+	return 0;
+}
+
+int ChecarNumerosPrimos(int n)
+{
+	int j;
+	for (j=2; j<= n/2; j++)
+	{
+		if (n%j == 0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}*
