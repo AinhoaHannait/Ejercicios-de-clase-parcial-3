@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int find(int b[], int l)
+{
+  int a, index, i;
+  a = 1000000;
+  index = -1;
+
+for(i=0; i<l; i++)
+  if (b[i]<a)
+  {
+    a = b[i];
+    index = i;
+  }
+return index;
+}
+
+int main ()
+{
+  int l = 50;
+  int b[l], i;
+
+  srand(time(NULL));
+
+for(i=0; i<l; i++)
+{
+  b[i]= rand() %100-50;
+  printf(" %d , b[i]);
+}
+
+printf("n nValor minimo: t &d", b[find(b, l)]);
+
+  return 0;
+}
