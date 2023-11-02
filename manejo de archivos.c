@@ -14,7 +14,7 @@
 		return media;	
 	}
 	
-	void orden(int lista[], int n) //Función ordenar el arreglo de numeros y ser usada en la mediana
+	void orden(int lista[], int n) //Funci?n ordenar el arreglo de numeros y ser usada en la mediana
 	{
 		int i, numeroActual, posAnterior;
 		for (i=0;i < n; i++)
@@ -44,7 +44,7 @@
 		return mayor;
 	}
 	
-	int mediana(int lista[], int n) // función para hallar la mediana
+	int mediana(int lista[], int n) // funci?n para hallar la mediana
 	{
 		orden(lista, n);
 		int mediana;
@@ -62,7 +62,7 @@
 		return mediana;
 	}
 	
-	int moda(int lista[], int n) //función para calcular moda
+	int moda(int lista[], int n) //funci?n para calcular moda
 	{
 		int moda=0, cont1=0, cont2=0;
 		int i, j;
@@ -89,26 +89,6 @@
 		return moda;	
 	}
 	
-	void histograma(int lista[], int n)
-	{
-		int max = lista[n-1];
-		int min = lista[n];
-		int rango = max - min +1;
-		int i, j;
-		
-		int *frecuencias = (int *)calloc(rango, sizeof(int));
-		
-		for(i=0; i<n; i++)
-		{
-			frecuencias[lista[i] - min]++;
-		}
-		
-		for (i=0 i<rango; i++)
-		{
-			printf("%d")
-		}
-		
-	}
 
 int main()
 {
@@ -127,7 +107,7 @@ int main()
   } 
    printf("\n");
 
-  for (i=0;i < n; i++) //ordenamiento por intersección
+  for (i=0;i < n; i++) //ordenamiento por intersecci?n
   {
     numeroActual = lista[i];
     posAnterior = i-1;
@@ -149,9 +129,30 @@ int main()
     printf("La mediana es %d\n", mediana(lista,n));
     printf("La moda es %d\n", moda(lista,n));
     
+    printf("\nHistograma:\n");
+    int histograma[31]; 
+    for (i = 0; i < 31; i++) 
+	{
+        histograma[i] = 0;
+    }
+    for (i = 0; i < n; i++) 
+	{
+        histograma[lista[i]]++;
+    }
+    for (i = 0; i < 31; i++)
+	 {
+        if (histograma[i] > 0)
+		 {
+            printf("%d: ", i);
+            for (j = 0; j < histograma[i]; j++)
+			 {
+                printf("*");
+            }
+            printf("\n");
+        }
+    }
     
-	
-	
+    
   
   return 0;
 }
